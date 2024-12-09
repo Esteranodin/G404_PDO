@@ -25,8 +25,8 @@ try {
 </head>
 
 <body>
+    <h1>Liste des utilisateurs :</h1>
     <ol>
-        <h1>Liste des utilisateurs :</h1>
 
         <?php
         foreach ($users as $user) {
