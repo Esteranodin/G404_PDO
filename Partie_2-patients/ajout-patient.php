@@ -5,7 +5,6 @@ if (isset($_GET['error'])) {
 } else {
     $error = false;
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -31,28 +30,28 @@ if (isset($_GET['error'])) {
     }
     ?>
 
-<section class = "formulaire">
+    <section class="formulaire">
 
-    <form action="./process/default_form_process.php" method="post">
+        <form action="./process/default_form_process.php" method="post">
 
-        <label for="lastName"> Votre nom de famille :</label>
-        <input type="text" name="lastName" id="lastName">
+            <label for="lastName"> Votre nom de famille :</label>
+            <input type="text" name="lastName" id="lastName">
 
-        <label for="firstName"> Votre prénom :</label>
-        <input type="text" name="firstName" id="firstName">
+            <label for="firstName"> Votre prénom :</label>
+            <input type="text" name="firstName" id="firstName">
 
-        <label for="birthdate"> Votre date de naissance :</label>
-        <input type="date" name="birthdate" id="birthdate">
-        
-        <label for="phone"> Votre numéro de téléphone:</label>
-        <input type="phone" name="phone" id="phone">
+            <label for="birthdate"> Votre date de naissance :</label>
+            <input type="date" name="birthdate" id="birthdate">
 
-        <label for="mail"> Votre e-mail :</label>
-        <input type="mail" name="mail" id="mail">
+            <label for="phone"> Votre numéro de téléphone:</label>
+            <input type="phone" name="phone" id="phone">
 
-        <input type="submit" value="Envoyer">
+            <label for="mail"> Votre e-mail :</label>
+            <input type="mail" name="mail" id="mail">
 
-    </form>
+            <input type="submit" value="Envoyer">
+
+        </form>
 
     </section>
 

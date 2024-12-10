@@ -26,18 +26,16 @@ try {
     <h1>Liste des patients</h1>
 
     <ol>
-
-
         <?php
         foreach ($patients as $patient) {
         ?>
-            <li>Nom : <?= $patient['lastname']  ?> <br>
-                Prénom : <?= $patient['firstname']  ?>
+            <li class = "formulaire">Nom : <?= $patient['lastname']  ?> <br>
+                Prénom : <?= $patient['firstname'] ?>
                 <form action="./profil-patient.php" method="post">
                     <input type="hidden" name="idPatient" value="<?= $patient['id'] ?>">
                     <input type="submit" value="Votre profil">
                 </form>
-            </li>
+            </li>          
 
         <?php
         }

@@ -27,12 +27,18 @@ try {
     <?php
     foreach ($patients as $patient) {
     ?>
-        <li>Nom : <?= $patient['lastname']  ?> <br>
-            Prénom : <?= $patient['firstname']  ?>
+        <div class="formulaire">
+            <li>Nom : <?= $patient['lastname']  ?> </li>
+            <li> Prénom : <?= $patient['firstname']  ?> </li>
         <?php
     }
-
         ?>
+        <form action="./modifier-patient.php" method="post">
+            <input type="hidden" name="idPatient" value="<?= $patient['id'] ?>">
+            <input type="submit" value="Modifier votre profil">
+        </form>
+        </div>
+
         <a href="./liste-patients.php">Retour à la liste des patients </a>
 
 </body>
