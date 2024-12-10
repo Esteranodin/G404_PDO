@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Votre compte patient a été crée</h1>
+    <h1>Le compte patient a bien été crée</h1>
 
     <?php
 

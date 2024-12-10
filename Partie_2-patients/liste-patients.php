@@ -30,7 +30,10 @@ try {
         foreach ($patients as $patient) {
         ?>
             <li class = "formulaire">Nom : <?= $patient['lastname']  ?> <br>
-                Prénom : <?= $patient['firstname'] ?>
+                Prénom : <?= $patient['firstname'] ?><br>
+                Date de naissance : <?= $patient['birthdate'] ?><br>
+                Tél. : <?= $patient['phone'] ?> <br>
+                @ : <?= $patient['mail'] ?>
                 <form action="./profil-patient.php" method="post">
                     <input type="hidden" name="idPatient" value="<?= $patient['id'] ?>">
                     <input type="submit" value="Votre profil">
