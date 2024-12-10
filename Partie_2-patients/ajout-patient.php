@@ -1,5 +1,4 @@
 <?php
-// index.php
 
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
@@ -15,46 +14,50 @@ if (isset($_GET['error'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traitement de formulaire</title>
+    <title>Formulalire d'ajout de patient</title>
     <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
-    <h1>hello world</h1>
-
 
     <?php
     if ($error == 1) {
-        echo '<p> Je te vois supprimer mes champs ...</p>';
+        echo '<p> Je te vois supprimer mes champs...</p>';
     }
 
     if ($error == 2) {
-        echo '<p> Il faut remplir tous les champs !!</p>';
+        echo '<p> Veuillez remplir tous les champs </p>';
     }
-
     ?>
 
-    <form action="./process/default_form_process.php" method="post">
-        <label for="firstName"> Prenom :</label>
-        <input type="text" name="firstName" id="firstName" required maxlength="10">
+<section class = "formulaire">
 
-        <label for="lastName"> Nom de famille :</label>
+    <form action="./process/default_form_process.php" method="post">
+
+        <label for="lastName"> Votre nom de famille :</label>
         <input type="text" name="lastName" id="lastName">
 
-        <label for="age"> Age :</label>
-        <input type="text" name="age" id="age">
+        <label for="firstName"> Votre prénom :</label>
+        <input type="text" name="firstName" id="firstName">
 
-        <label for="email"> Email :</label>
-        <input type="email" name="email" id="email">
+        <label for="birthdate"> Votre date de naissance :</label>
+        <input type="date" name="birthdate" id="birthdate">
+        
+        <label for="phone"> Votre numéro de téléphone:</label>
+        <input type="phone" name="phone" id="phone">
 
-        <label for="password"> Password :</label>
-        <input type="password" name="password" id="password">
+        <label for="mail"> Votre e-mail :</label>
+        <input type="mail" name="mail" id="mail">
 
         <input type="submit" value="Envoyer">
 
-        <a href="./index.php"> Cliquez pour ajouter un patient </a>
     </form>
+
+    </section>
+
+    <a href="./index.php"> Retour à l'accueil </a>
+    <a href="./liste-patients.php">Liste des patients </a>
 
 </body>
 

@@ -1,18 +1,7 @@
 <?php
-require_once './connect.php';
-
-$sql = "SELECT * FROM `patients`";
-
-try {
-    $stmt = $pdo->query($sql);
-    $users = $stmt->fetchAll(PDO::FETCH_ASSOC); // ou fetch si vous savez que vous n'allez avoir qu'un seul résultat
-
-} catch (PDOException $error) {
-    echo "Erreur lors de la requete : " . $error->getMessage();
-}
+require_once './utils/connect.php';
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,14 +9,14 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="./style.css">
-
 </head>
 
 <body>
 
-<a href="./ajout-patient.php"> Pour aller sur ajouter un patient </a>
+<a href="./ajout-patient.php"> Ajouter un patient </a>
+<a href="./liste-patients.php">Liste des patients </a>
 
 </body>
 
