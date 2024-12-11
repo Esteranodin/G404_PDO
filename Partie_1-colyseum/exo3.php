@@ -6,8 +6,7 @@ LIMIT 20";
 
 try {
     $stmt = $pdo->query($sql);
-    $clients = $stmt->fetchAll(PDO::FETCH_ASSOC); // ou fetch si vous savez que vous n'allez avoir qu'un seul résultat
-
+    $clients = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 } catch (PDOException $error) {
     echo "Erreur lors de la requete : " . $error->getMessage();
 }
@@ -25,7 +24,7 @@ try {
 </head>
 
 <body>
-    <h1>Liste des utilisateurs qui ont une carte de fidélité :</h1>
+    <h1>Liste des vingt premiers clients :</h1>
     <ol>
 
         <?php

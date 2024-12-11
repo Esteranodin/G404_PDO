@@ -7,10 +7,11 @@ INNER JOIN cards ON cards.cardNumber = clients.cardNumber
 INNER JOIN cardtypes ON cards.cardTypesId = cardtypes.id
 WHERE cardtypes.type = "Fidélité" ';
 
+//bdd a un tinyint (comme booleen en bdd) sur card, donc si card = true (1), la personne a une carte ensuite il faut joindre de la même façon les tables
+
 try {
     $stmt = $pdo->query($sql);
-    $clients = $stmt->fetchAll(PDO::FETCH_ASSOC); // ou fetch si vous savez que vous n'allez avoir qu'un seul résultat
-
+    $clients = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 } catch (PDOException $error) {
     echo "Erreur lors de la requete : " . $error->getMessage();
 }
@@ -34,7 +35,10 @@ try {
         <?php
         foreach ($clients as $client) {
         ?>
-            <li>Nom : <?= $client['lastName']  ?> <br> Prénom : <?= $client['firstName']  ?> </li>
+            <li>Nom : <?= $client['lastName']  ?>
+            <br> Prénom : <?= $client['firstName']  ?> 
+            <br> Numéro de carte : <?= $client['cardNumber']  ?> 
+        </li>
             <br>
 
         <?php

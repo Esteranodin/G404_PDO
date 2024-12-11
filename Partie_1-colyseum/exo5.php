@@ -1,14 +1,14 @@
 <?php
 require_once './connect.php';
 
-$sql = "SELECT *
+$sql = "SELECT * -- pour opti il aurait été mieux de choisir ce qu'on veut comme infos plutôt que de laisser *
 FROM `clients`
 WHERE lastName LIKE 'm%'
 ORDER BY clients.lastName ASC";
 
 try {
     $stmt = $pdo->query($sql);
-    $clients = $stmt->fetchAll(PDO::FETCH_ASSOC); // ou fetch si vous savez que vous n'allez avoir qu'un seul résultat
+    $clients = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
 } catch (PDOException $error) {
     echo "Erreur lors de la requete : " . $error->getMessage();
