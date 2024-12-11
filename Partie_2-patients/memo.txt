@@ -1,0 +1,7 @@
+Enlever le fichier compte create et faire une simple alert par exemple
+
+Améliorer CSS et UI/UX
+notamment des messages d'alertes pour creation ok / modification ok ... 
+
+Comme mettre une option "choississez votre patient" dans select prise rdz vs
+

@@ -7,46 +7,44 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     return;
 }
 
-// if (
-//     !isset(
-//         $_POST['dateHour'],
-//         $_POST['idPatients'],
-//     )
-// ) {
-//     header('location: ../ajout-rendezvous.php?error=1');
-//     return;
-// }
+if (
+    !isset(
+        $_POST['date'],
+        $_POST['time'],
+        $_POST['idPatients'],
+    )
+) {
+    header('location: ../ajout-rendezvous.php?error=1');
+    return;
+}
 
-// if (
-//     empty($_POST['dateHour']) ||
-//     empty($_POST['idPatients'])
-// ) {
-//     header('location: ../ajout-rendezvous.php?error=2');
-//     return;
-// }
+if (
+    empty($_POST['date']) ||
+    empty($_POST['time']) ||
+    empty($_POST['idPatients'])
+) {
+    header('location: ../ajout-rendezvous.php?error=2');
+    return;
+}
 
-// input sanitization
-// $lastName = htmlspecialchars(trim($_POST['lastName']));
-// $firstName = htmlspecialchars(trim($_POST['firstName']));
-
-
+// input sanitization necessaire si format imposé par type du form ? 
+// $dateHour = htmlspecialchars(trim($_POST['dateHour']));
+// $idPatients = htmlspecialchars(trim($_POST['idPatients']));
 
 $sql = "INSERT INTO appointments (dateHour, idPatients)
  VALUES (:dateHour, :idPatients)";
-$dateHour = $_POST['date'] . " " . $_POST['time'];
+$dateHour = $_POST['date'] . " " . $_POST['time']; // pour correspondre écirture base de donnée qui à une seule variable SQL pour date + espace + heure
 
 try {
     $stmt = $pdo->prepare($sql);
     $patients = $stmt->execute([
         ':dateHour' => $dateHour,
-        ':idPatients' => $idPatients
+        ':idPatients' => $_POST['idPatients']
     ]);
+
 } catch (PDOException $error) {
     echo "Erreur lors de la requete : " . $error->getMessage();
 }
 
 header('location: ../index.php');
 exit;
-?>
-
-

@@ -2,6 +2,9 @@
 
 require_once './utils/connect.php';
 
+$today = date("Y-m-d");
+date_default_timezone_set('UTC');
+
 $sql = "SELECT * FROM `patients`";
 
 try {
@@ -24,7 +27,7 @@ if (isset($_GET['error'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulalire d'ajout de patient</title>
+    <title>Formulaire d'ajout de patient</title>
     <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -43,18 +46,17 @@ if (isset($_GET['error'])) {
 
     <section class="formulaire">
 
-        <form action="./process/default_rdv_process.php" method="post">
+    <form action="./process/default_rdv_process.php" method="post">
 
             <label for="patients">Choississer le nom du patient</label>
-            <select name="idPatient" id="idPatient">
+            <select name="idPatients" id="idPatients">
                 <?php foreach ($patients as $patient) {
                     echo '<option value="' . $patient['id'] .  '">' . $patient['lastname'] . " " . $patient['firstname'] . '</option>';
                 } ?>
             </select>
 
             <label for="date"> Date du rendez-vous :</label>
-            <input type="date" name="date" id="date">
-
+            <input type="date" min="<?= $today ?>" name="date" id="date">
             <label for="time"> Heure du rendez-vous:</label>
             <input type="time" name="time" id="time">
 
