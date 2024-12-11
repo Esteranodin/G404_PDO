@@ -10,7 +10,6 @@ try {
 } catch (PDOException $error) {
     echo "Erreur lors de la requete : " . $error->getMessage();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +29,9 @@ try {
         <div class="formulaire">
             <li>Nom : <?= $patient['lastname']  ?> </li>
             <li> Prénom : <?= $patient['firstname']  ?> </li>
+            <li> Date de naissance : <?= $patient['birthdate']  ?> </li>
+            <li> Tél : <?= $patient['phone']  ?> </li>
+            <li> @ : <?= $patient['mail']  ?> </li>
         <?php
     }
         ?>

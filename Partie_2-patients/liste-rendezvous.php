@@ -1,14 +1,14 @@
 <?php
 require_once './utils/connect.php';
 
-$sql = "SELECT * 
+$sql = "SELECT patients.lastname, patients.firstname, patients.birthdate, appointments.dateHour, appointments.id
 FROM `appointments`
 JOIN patients ON patients.id = appointments.idPatients";
 
 try {
     $stmt = $pdo->query($sql);
     $patients = $stmt->fetchAll(PDO::FETCH_ASSOC);
- 
+
 } catch (PDOException $error) {
     echo "Erreur lors de la requete : " . $error->getMessage();
 }
@@ -38,9 +38,9 @@ try {
                 Date de naissance : <?= $patient['birthdate'] ?><br>
                 <hr>
                 Rendez-vous le : <?= $patient['dateHour'] ?>
-                <form action="./profil-patient.php" method="post">
-                    <input type="hidden" name="idPatient" value="<?= $patient['dateHour'] ?>">
-                    <input type="submit" value="Modifier le RDZ-VS<?php $patient['dateHour'] ?>">
+                <form action="./rendez-vous.php" method="post">
+                    <input type="hidden" name="idAppointments" value="<?= $patient['id']  ?>">
+                    <input type="submit" value="Voir les RDZ-VS">
                 </form>
             </li>          
     

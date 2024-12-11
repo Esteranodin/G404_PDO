@@ -29,7 +29,8 @@ try {
         <?php
         foreach ($patients as $patient) {
         ?>
-            <li class = "formulaire">Nom : <?= $patient['lastname']  ?> <br>
+            <li class = "formulaire">
+                Nom : <?= $patient['lastname']  ?> <br>
                 Prénom : <?= $patient['firstname'] ?><br>
                 Date de naissance : <?= $patient['birthdate'] ?><br>
                 Tél. : <?= $patient['phone'] ?> <br>
