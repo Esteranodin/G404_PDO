@@ -66,8 +66,9 @@ if (isset($_GET['error'])) {
 
     </section>
 
+    <a href="./liste-rendezvous.php"> Retour aux rendez-vous</a>
     <a href="./index.php"> Retour à l'accueil </a>
-
+    
 </body>
 
 </html>
