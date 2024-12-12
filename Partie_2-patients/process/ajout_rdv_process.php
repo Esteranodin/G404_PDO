@@ -33,7 +33,8 @@ if (
 
 $sql = "INSERT INTO appointments (dateHour, idPatients)
  VALUES (:dateHour, :idPatients)";
-$dateHour = $_POST['date'] . " " . $_POST['time']; // pour correspondre écirture base de donnée qui à une seule variable SQL pour date + espace + heure
+$dateHour = $_POST['date'] . " " . $_POST['time']; 
+// pour correspondre écirture base de donnée qui à une seule variable SQL pour date + espace + heure
 
 try {
     $stmt = $pdo->prepare($sql);

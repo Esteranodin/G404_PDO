@@ -5,3 +5,9 @@ notamment des messages d'alertes pour creation ok / modification ok ...
 
 Comme mettre une option "choississez votre patient" dans select prise rdz vs
 
+Faire en sorte que créneaux horaires soient définis au moins les plages possibles 
+
+Possible de changer format date et heure pour qu'elle soient en fançais ? 
+
+
+Reprendre a l'exo 8 

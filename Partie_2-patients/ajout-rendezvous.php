@@ -46,7 +46,7 @@ if (isset($_GET['error'])) {
 
     <section class="formulaire">
 
-    <form action="./process/default_rdv_process.php" method="post">
+    <form action="./process/ajout_rdv_process.php" method="post">
 
             <label for="patients">Choississer le nom du patient</label>
             <select name="idPatients" id="idPatients">

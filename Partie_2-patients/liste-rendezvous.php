@@ -40,7 +40,7 @@ try {
                 Rendez-vous le : <?= $patient['dateHour'] ?>
                 <form action="./rendez-vous.php" method="post">
                     <input type="hidden" name="idAppointments" value="<?= $patient['id']  ?>">
-                    <input type="submit" value="Voir les RDZ-VS">
+                    <input type="submit" value="Voir le RDZ-VS">
                 </form>
             </li>          
     

@@ -44,7 +44,7 @@ $sql = "INSERT INTO patients (lastname, firstname, birthdate, phone, mail)
 
 try {
     $stmt = $pdo->prepare($sql);
-    $patients = $stmt->execute([
+    $stmt->execute([
        ':lastname' => $lastName,
         ':firstname' => $firstName,
         ':birthdate' => $birthdate,

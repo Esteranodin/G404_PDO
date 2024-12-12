@@ -46,7 +46,7 @@ try {
 
     <section class="formulaire">
 
-        <form action="./process/modifier_form_process.php" method="post">
+        <form action="./process/modifier_patient_process.php" method="post">
         <?php
     foreach ($patients as $patient) {
         ?>

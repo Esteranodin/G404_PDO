@@ -32,7 +32,7 @@ if (isset($_GET['error'])) {
 
     <section class="formulaire">
 
-        <form action="./process/default_form_process.php" method="post">
+        <form action="./process/ajout_patient_process.php" method="post">
 
             <label for="lastName"> Votre nom de famille :</label>
             <input type="text" name="lastName" id="lastName">
@@ -44,12 +44,14 @@ if (isset($_GET['error'])) {
             <input type="date" name="birthdate" id="birthdate">
 
             <label for="phone"> Votre numéro de téléphone:</label>
-            <input type="phone" name="phone" id="phone">
+            <input type="tel" name="phone" id="phone" pattern = "[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}"
+            placeholder="Exemple : 06 33 33 33 31"> 
+            <!-- placeholder pas d'accessibilité VS alt, juste du bonus  + ce n'est que de l'ui/ix pas de la sécu -->
 
             <label for="mail"> Votre e-mail :</label>
-            <input type="mail" name="mail" id="mail">
+            <input type="email" name="mail" id="mail">
 
-            <input type="submit" value="Envoyer">
+            <input type="submit" value="Ajouter">
 
         </form>
 

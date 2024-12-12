@@ -9,7 +9,6 @@ try {
 } catch (PDOException $error) {
     echo "Erreur lors de la requete : " . $error->getMessage();
 }
-
 ?>
 
 <!DOCTYPE html>
